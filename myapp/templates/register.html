@@ -1,0 +1,23 @@
+
+
+<form action = "{% url 'register' %}" method="post">
+{% csrf_token %}
+
+     <div class= "container">
+<h2>sign_app</h2>
+    <p> enter details to Login</p>
+    <hr>                   
+       <label for="username"><b>username</b></label>
+<input type ="text" placehaolder="username" name= "username" required>
+   <label for="pass"><b>Password</b></label>
+   <input type = "password" placehaolder="Password" name ="Password" required>
+
+
+    <label for="pass repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="repeat" required>
+
+<button type="button" class="cancel">Cancel</button>
+      <button type="submit" class="signup">Sign Up</button>
+    </div>
+  </div>
+</form>

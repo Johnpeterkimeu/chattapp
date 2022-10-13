@@ -1,0 +1,41 @@
+|
+      
+      
+       <div class="container"
+       
+       >
+       <form action="{% url 'save_data' %}" method="post">
+        {% csrf_token %}
+  
+      <label for= "fname"> firstname </label>
+      <input type= text id="fname" name="firstname" placehaolder= "yourname">
+
+      
+  <label for= "lname"> lastname </label>
+      <input type= text id="lname" name="lastname" placehaolder= "yourname">
+   <label   for = "age" > age </label>
+   <input type = number id="age" name="age" placeholder= "age"
+    >
+
+    <label for="phone_number" >phone_number</label>
+    <input type= number id="phone_number" name= "phone_number"  placehaolder= "enter your phone_number" >
+
+  
+
+
+
+      
+      <br>
+         
+
+
+        
+        <button type="submitt" name="login">submitt</button>
+ <button type="submitt" name="cancel">submitt</button>
+
+        </form>
+     
+       
+        </div>
+
+           
