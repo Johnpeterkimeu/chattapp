@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'myapp',
+    'account'
     
 ]
 
@@ -77,17 +79,15 @@ WSGI_APPLICATION = 'Location.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'chat',
-        'PASSWORD': '',
-        'PORT':'3306',
-        'USER' : 'root',
-        'HOST':'127.0.0.1',
-        'OPTIONS': {  
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
-        }  
-        
+
+  'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        #'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'chatt',
+        'USER': 'postgres',
+        'PASSWORD': '17181718',  # 'PASSWORD': '',Password1234
+        'HOST': 'localhost',  # 'HOST': '',172.16.58.242
+        'PORT': '5432',
     }
 
     
@@ -137,7 +137,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
 
-AUTH_USER_MODEL="myapp.CustomUser"
+AUTH_USER_MODEL="account.Account"
 
 
 # Default primary key field type

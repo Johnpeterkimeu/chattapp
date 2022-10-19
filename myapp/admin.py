@@ -1,9 +1,9 @@
 from pyexpat import model
 from django.contrib import admin
 
-from myapp.models import CustomUser
+from account.models import Account
 # from .forms import CustomUserCreationForm,CustomUserChangeForm
-from .models import CustomUser
+# from .models import CustomUser
 # Register your models here.
 
 # class CustomUserAdmin(UserAdmin):
@@ -26,7 +26,7 @@ from .models import CustomUser
 # search_fields=('email',)
 # ordering=('email',)
 
-# admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Account)
 
 
 # class PostAdmin(admin.ModelAdmin):

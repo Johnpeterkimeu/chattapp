@@ -13,7 +13,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
 from django.urls import is_valid_path
-from myapp.models import CustomUser, Location
+from myapp.models import  Location
 import myapp
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
@@ -84,7 +84,7 @@ def register(request):
 
           if Password == repeat:                  
       
-            CustomUser.objects.create_user(username= username,
+            user.objects.create_user(username= username,
             password= Password,first_name=first_name,last_name= last_name,age=age,phone_number=phone_number,photo=photo,email=email)
 
             return redirect('Login')  
