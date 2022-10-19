@@ -33,7 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth',    
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'Location.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'chatt',
+        'NAME': 'chat',
         'PASSWORD': '',
         'PORT':'3306',
         'USER' : 'root',
@@ -89,6 +89,8 @@ DATABASES = {
         }  
         
     }
+
+    
 }
 
 
@@ -126,8 +128,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, 'static'),
+   os.path.join(BASE_DIR,'media')
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static_files')
+
+AUTH_USER_MODEL="myapp.CustomUser"
 
 
 # Default primary key field type
