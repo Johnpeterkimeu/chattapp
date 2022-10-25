@@ -18,6 +18,7 @@ from myapp.models import  Location
 import myapp
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login
+from django.contrib.auth.hashers import make_password
 
 # Create your views here.
 
@@ -77,13 +78,14 @@ def register(request):
           first_name= request.POST.get('first_name')
           last_name=request.POST.get('last_name')
           email=request.POST.get('email')
-          Password= request.POST.get("Password")
-          repeat= request.POST.get("repeat")
+          Password=request.POST.get("Password")
+          repeat=request.POST.get("repeat")
           age= request.POST.get("age")
           phone_number= request.POST.get("phone_number")
           photo= request.FILES.get("photo")
 
-          if Password == repeat:                  
+          if Password == repeat:  
+            Password=make_password(Password)                
       
             Account.objects.create(username = username,
             password= Password,first_name=first_name,last_name= last_name,age=age,phone_number=phone_number,photo=photo,email=email)
@@ -108,7 +110,7 @@ def profile(request):
     if request.user.is_authenticated:
       print("te user is authenticates")
       user=request.user
-      print("the username is",user.username)
+      print("the username is",user.username, user.email, user.phone_number)
       first_name=user.first_name
       last_name= user.last_name
       username=user.username
