@@ -1,16 +1,30 @@
+{%load static%}
 <html>
   <body>
   <h2> Brands</h2>
   <div>
   <p> here is a list of new Brands </p>
+
 </div>
-<div>
+<div  style="display: flex ; flex-direction: column">
+
   <p> 
   cloth_wear
+  <img src="{% static 'dress.jpeg' %}" alt="home" />
+  
   hardware and other related
+  <img src="{% static 'kbd.jpeg' %}" alt="home" />
   shop equipments
-  </p>
 
+  
+  <img src="{% static 'mm.jpeg' %}" alt="home" />
+</p>
+
+<p> 
+for selling buying click the link below
+
+     <a href="{% url 'lle' %}">click here</a>
+</p>
   </div>
   </body>
   </html>

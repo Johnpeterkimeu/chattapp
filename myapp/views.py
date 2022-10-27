@@ -37,9 +37,8 @@ def Login(request):
           login(request, user)          
           return redirect('chat')
   
-      return HttpResponse('wrong password or username')       
- 
-    
+      return redirect('chat')  
+      
   return render(request,"loginpage.html")
     
 def save_data(request):
@@ -138,4 +137,6 @@ def profile(request):
 def  dev(request):
      return render(request,"dev.html")
 
+def  lle(request):
+     return render(request,"lle.html")
 

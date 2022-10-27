@@ -13,5 +13,6 @@ path("save_data",views.save_data,name='save_data'),
 path("home/",views.sign_up,name="signup"),
 path("register/",views.register,name="register"),
  #path("redirect/",views.redirect,name="redirect")
- path('',views.dev, name='dev')
+ path('kk',views.dev, name='dev'),
+ path('lle',views.lle, name='lle')
 ]
